@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Jal.Locator.CastleWindsor")]
-[assembly: AssemblyDescription("Jal.Locator.CastleWindsor")]
+[assembly: AssemblyDescription("Castle Windsor implementation of the Jal.Locator library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Cignium Technologies")]
+[assembly: AssemblyCompany("Raul Naupari")]
 [assembly: AssemblyProduct("Jal.Locator.CastleWindsor")]
 [assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]
