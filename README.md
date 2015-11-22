@@ -10,7 +10,8 @@ Setup the Castle Windsor container, use the ServiceLocatorInstaller class includ
 
     var container = new WindsorContainer();
     container.Install(new ServiceLocatorInstaller());
-	
+	container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().LifestyleSingleton());
+				
 Resolve an instance of the IServiceLocator class
 
     var locator = container.Resolve<IServiceLocator>();
