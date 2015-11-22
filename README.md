@@ -6,10 +6,16 @@ Implement the interface IServiceLocator
 
 The following example is using the Castle Windsor implementation
 
-Setup the Castle Windsor container, use the ServiceLocatorInstaller class included
+Setup the Castle Windsor container
 
     var container = new WindsorContainer();
+	
+Install the Jal.Locator library, use the ServiceLocatorInstaller class included
+
     container.Install(new ServiceLocatorInstaller());
+	
+Register your services
+
 	container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().LifestyleSingleton());
 				
 Resolve an instance of the IServiceLocator class
