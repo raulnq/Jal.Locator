@@ -38,5 +38,10 @@ namespace Jal.Locator.CastleWindsor.Impl
         {
             return Container.Resolve(service);
         }
+
+        public object Resolve(Type service, string key)
+        {
+            return Container.Resolve(service, key);
+        }
     }
 }

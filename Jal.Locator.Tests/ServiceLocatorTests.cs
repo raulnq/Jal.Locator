@@ -100,5 +100,21 @@ namespace Jal.Locator.Tests
 
             instance.ShouldBeAssignableTo(typeof(IDoSomething[]));
         }
+
+        [Test]
+        public void ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
+        {
+            var fixture = new Fixture();
+
+            var sut = fixture.Create<ServiceLocator>();
+
+            var o = fixture.Create<Mock<IDoSomething>>().Object;
+
+            sut.Register(o);
+
+            var instance = sut.Resolve(typeof(IDoSomething), o.GetType().FullName);
+
+            instance.ShouldBeAssignableTo(typeof(IDoSomething));
+        }
     }
 }

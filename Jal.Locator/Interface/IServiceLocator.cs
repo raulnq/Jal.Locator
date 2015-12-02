@@ -11,5 +11,7 @@ namespace Jal.Locator.Interface
         TSource[] ResolveAll<TSource>() where TSource : class;
 
         object Resolve(Type service);
+
+        object Resolve(Type service, string key);
     }
 }

@@ -49,5 +49,10 @@ namespace Jal.Locator.Impl
             }
             throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", service.Name));
         }
+
+        public object Resolve(Type service, string key)
+        {
+            return _objects[key];
+        }
     }
 }

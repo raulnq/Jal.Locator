@@ -132,5 +132,21 @@ namespace Jal.Locator.Tests.CastleWindsor
                 sut.Release(instance);
             }  
         }
+
+        [Test]
+        public void ResolveByTypeAndKey_WithRegisteredObject_ShouldBeAssignableToIDoSomething()
+        {
+            var container = new WindsorContainer();
+
+            container.Install(new ServiceLocatorInstaller());
+
+            container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().Named(typeof(DoSomething).Name).LifestyleSingleton());
+
+            var sut = container.Resolve<IServiceLocator>();
+
+            var instance = sut.Resolve(typeof(IDoSomething), typeof(DoSomething).Name);
+
+            instance.ShouldBeAssignableTo(typeof(IDoSomething));
+        }
     }
 }
