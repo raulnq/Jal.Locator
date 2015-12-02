@@ -2,7 +2,7 @@
 Just another library to implement a service locator pattern
 
 ## How to use?
-Implement the interface IServiceLocator. The following example is using the Castle Windsor implementation included
+Implement the interface IServiceLocator (The following example is using the Castle Windsor implementation included)
 
 Setup the Castle Windsor container
 
