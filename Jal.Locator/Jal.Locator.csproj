@@ -42,6 +42,7 @@
     <Compile Include="Impl\ServiceLocator.cs" />
     <Compile Include="Interface\IScopedServiceLocator.cs" />
     <Compile Include="Interface\IServiceLocator.cs" />
+    <Compile Include="Model\ServiceLocatorRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,7 +18,7 @@ namespace Jal.Locator.Tests
 
             var sut = fixture.Create<ServiceLocator>();
 
-            sut.Register(fixture.Create<Mock<IDoSomething>>().Object);
+            sut.Register(typeof(IDoSomething), fixture.Create<Mock<IDoSomething>>().Object);
 
             var instance = sut.Resolve(typeof(IDoSomething));
 
@@ -42,7 +42,7 @@ namespace Jal.Locator.Tests
 
             var sut = fixture.Create<ServiceLocator>();
 
-            sut.Register(fixture.Create<Mock<IDoSomething>>().Object);
+            sut.Register(typeof(IDoSomething), fixture.Create<Mock<IDoSomething>>().Object);
 
             var instance = sut.Resolve<IDoSomething>();
 
@@ -68,9 +68,9 @@ namespace Jal.Locator.Tests
 
             var service = fixture.Create<Mock<IDoSomething>>().Object;
 
-            sut.Register(service);
+            sut.Register(typeof(IDoSomething), service, "key");
 
-            var instance = sut.Resolve<IDoSomething>(service.GetType().FullName);
+            var instance = sut.Resolve<IDoSomething>("key");
 
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }
@@ -94,7 +94,7 @@ namespace Jal.Locator.Tests
 
             var sut = fixture.Create<ServiceLocator>();
 
-            sut.Register(fixture.Create<Mock<IDoSomething>>().Object);
+            sut.Register(typeof(IDoSomething), fixture.Create<Mock<IDoSomething>>().Object);
 
             var instance = sut.ResolveAll<IDoSomething>();
 
@@ -110,9 +110,9 @@ namespace Jal.Locator.Tests
 
             var o = fixture.Create<Mock<IDoSomething>>().Object;
 
-            sut.Register(o);
+            sut.Register(typeof(IDoSomething), o, "key");
 
-            var instance = sut.Resolve(typeof(IDoSomething), o.GetType().FullName);
+            var instance = sut.Resolve(typeof(IDoSomething), "key");
 
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }

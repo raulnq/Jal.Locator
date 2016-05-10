@@ -3,56 +3,82 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Jal.Locator.Interface;
+using Jal.Locator.Model;
 
 namespace Jal.Locator.Impl
 {
-    [DebuggerDisplay("Items: {_objects.Keys.Count}")]
+    [DebuggerDisplay("Items: {_records.Count}")]
     public class ServiceLocator : IServiceLocator
     {
-        [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-        private readonly Dictionary<string, object> _objects;
+        public static IServiceLocator Current;
 
-        public void Register(object instance)
+        public static void SetServiceLocatorProvider(IServiceLocator provider) 
         {
-            _objects.Add(instance.GetType().FullName, instance);
+            Current = provider;
+        }
+
+        public static void SetDefaultServiceLocatorProvider()
+        {
+            Current = new ServiceLocator();
+        }
+
+        [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+        private readonly IList<ServiceLocatorRecord> _records;
+
+        public void Register(Type component, object instance)
+        {
+            _records.Add(new ServiceLocatorRecord(component, instance, component.FullName));
+        }
+
+        public void Register(Type component, object instance, string name)
+        {
+            _records.Add(new ServiceLocatorRecord(component, instance, name));
         }
 
         public ServiceLocator()
         {
-            _objects = new Dictionary<string, object>();
+            _records = new List<ServiceLocatorRecord>();
         }
 
         public TSource Resolve<TSource>() where TSource : class
         {
-            foreach (var o in _objects.Where(o => o.Value is TSource))
+            foreach (var o in _records.Where(o => o.Component == typeof(TSource)))
             {
-                return o.Value as TSource;
+                return o.Implementation as TSource;
             }
             throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", typeof(TSource).Name));
         }
 
-        public TSource Resolve<TSource>(string key) where TSource : class
+        public TSource Resolve<TSource>(string name) where TSource : class
         {
-            return _objects[key] as TSource;
+            foreach (var o in _records.Where(o => o.Component == typeof(TSource) && o.Name == name))
+            {
+                return o.Implementation as TSource;
+            }
+            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", typeof(TSource).Name));
         }
 
         public TSource[] ResolveAll<TSource>() where TSource : class
         {
-            return _objects.Where(o => o.Value is TSource).Select(x => x.Value as TSource).ToArray();
+            return _records.Where(o => o.Component == typeof(TSource)).Select(x => x.Implementation as TSource).ToArray();
         }
 
         public object Resolve(Type service)
         {
-            foreach (var o in _objects.Where(o => service.IsInstanceOfType(o.Value)))
+            foreach (var o in _records.Where(o => o.Component == service))
             {
-                return o.Value;
+                return o.Implementation;
             }
             throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", service.Name));
         }
 
-        public object Resolve(Type service, string key)
+        public object Resolve(Type service, string name)
         {
-            return _objects[key];
+            foreach (var o in _records.Where(o => o.Component == service && o.Name == name))
+            {
+                return o.Implementation;
+            }
+            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", service.Name));
         }
     }
 }
