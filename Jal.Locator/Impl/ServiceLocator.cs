@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Jal.Locator.Fluent;
 using Jal.Locator.Interface;
 using Jal.Locator.Model;
 
