@@ -12,14 +12,12 @@ namespace Jal.Locator.Impl
     {
         public static IServiceLocator Current;
 
-        public static void SetServiceLocatorProvider(IServiceLocator provider) 
+        public static ServiceLocatorSetupDescriptor Setup
         {
-            Current = provider;
-        }
-
-        public static void SetDefaultServiceLocatorProvider()
-        {
-            Current = new ServiceLocator();
+            get
+            {
+                return new ServiceLocatorSetupDescriptor();
+            }
         }
 
         [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
