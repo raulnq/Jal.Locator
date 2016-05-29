@@ -3,7 +3,7 @@ Just another library to implement a service locator pattern
 
 ## How to use?
 
-### Default implementation ()
+### Default implementation
 
 I only suggest to use this implementation on simple apps.
 
