@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Jal.Locator.Fluent;
 using Jal.Locator.Interface;
+using Jal.Locator.Interface.Fluent;
 using Jal.Locator.Model;
 
 namespace Jal.Locator.Impl
@@ -13,11 +14,11 @@ namespace Jal.Locator.Impl
     {
         public static IServiceLocator Current;
 
-        public static ServiceLocatorSetupDescriptor Setup
+        public static IServiceLocatorFluentBuilder Build
         {
             get
             {
-                return new ServiceLocatorSetupDescriptor();
+                return new ServiceLocatorFluentBuilder();
             }
         }
 
