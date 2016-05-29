@@ -44,5 +44,5 @@ Resolve your service
     var service = locator.Resolve<IDoSomething>();
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9iysp7cav79otj2n?svg=true)](https://ci.appveyor.com/project/raulnq/jal-locator)
-[![NuGet](https://img.shields.io/nuget/dt/Jal.ServiceLocator.svg)](https://www.nuget.org/packages/Jal.ServiceLocator) 
-[![NuGet](https://img.shields.io/nuget/vpre/Jal.ServiceLocator.svg)](https://www.nuget.org/packages/Jal.ServiceLocator)
+[![NuGet](https://img.shields.io/nuget/dt/Jal.Locator.svg)](https://www.nuget.org/packages/Jal.Locator) 
+[![NuGet](https://img.shields.io/nuget/vpre/Jal.Locator.svg)](https://www.nuget.org/packages/Jal.Locator)
