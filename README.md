@@ -7,7 +7,7 @@ Just another library to implement a service locator pattern
 
 I only suggest to use this implementation on simple apps.
 
-Create an intance of the locator
+Create an instance of the locator
 
     var locator = ServiceLocator.Build.Create as ServiceLocator;
 
