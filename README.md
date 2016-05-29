@@ -13,7 +13,7 @@ Create an instance of the locator
 
 Register your service
 
-    sut.Register(typeof(IDoSomething), new DoSomething());
+    locator.Register(typeof(IDoSomething), new DoSomething());
     
 Resolve your service
 
@@ -42,3 +42,7 @@ Resolve an instance of the IServiceLocator class
 Resolve your service
 
     var service = locator.Resolve<IDoSomething>();
+
+[![Build status](https://ci.appveyor.com/api/projects/status/riewcxw29gy77855/branch/master?svg=true)](https://ci.appveyor.com/project/raulnq/jal-servicelocator/branch/master)
+[![NuGet](https://img.shields.io/nuget/dt/Jal.ServiceLocator.svg)](https://www.nuget.org/packages/Jal.ServiceLocator) 
+[![NuGet](https://img.shields.io/nuget/vpre/Jal.ServiceLocator.svg)](https://www.nuget.org/packages/Jal.ServiceLocator)
