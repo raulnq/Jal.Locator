@@ -2,17 +2,36 @@
 Just another library to implement a service locator pattern
 
 ## How to use?
-Implement the interface IServiceLocator (The following example is using the Castle Windsor implementation included)
 
-Setup the Castle Windsor container
+### Default implementation ()
+
+I only suggest to use this implementation on simple apps.
+
+Create an intance of the locator
+
+    var locator = ServiceLocator.Build.Create as ServiceLocator;
+
+Register your service
+
+    sut.Register(typeof(IDoSomething), new DoSomething());
+    
+Resolve your service
+
+    var service = locator.Resolve<IDoSomething>();
+
+### Castle Windsor implementation
+
+The following example is using the Castle Windsor implementation
+
+Setup the container
 
     var container = new WindsorContainer();
 	
-Install the Jal.Locator library, use the ServiceLocatorInstaller class included
+Install the library
 
     container.Install(new ServiceLocatorInstaller());
 	
-Register your services
+Register your service
 
 	container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().LifestyleSingleton());
 				
@@ -20,6 +39,6 @@ Resolve an instance of the IServiceLocator class
 
     var locator = container.Resolve<IServiceLocator>();
 	
-Resolve your interfaces using the service locator class
+Resolve your service
 
     var service = locator.Resolve<IDoSomething>();
