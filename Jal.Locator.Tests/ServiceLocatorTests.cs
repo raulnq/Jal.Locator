@@ -15,7 +15,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             sut.Register(typeof(IDoSomething), new DoSomething());
 
@@ -27,7 +27,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveByType_WithoutRegisteredObject_ShouldThrowException()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             Should.Throw<Exception>(() => sut.Resolve(typeof(IDoSomething)));
         }
@@ -35,7 +35,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             sut.Register(typeof(IDoSomething), new DoSomething());
 
@@ -47,7 +47,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void Resolve_WithoutRegisteredObject_ShouldThrowException()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             Should.Throw<Exception>(() => sut.Resolve<IDoSomething>());
         }
@@ -55,7 +55,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             sut.Register(typeof(IDoSomething), new DoSomething(), "key");
 
@@ -67,7 +67,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveByKey_WithoutRegisteredObject_ShouldThrowException()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             Should.Throw<Exception>(() => sut.Resolve<IDoSomething>("key"));
         }
@@ -75,7 +75,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             sut.Register(typeof(IDoSomething), new DoSomething());
 
@@ -87,7 +87,7 @@ namespace Jal.Locator.Tests
         [Test]
         public void ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            var sut = ServiceLocator.Build.Create as ServiceLocator;
+            var sut = ServiceLocator.Builder.Create as ServiceLocator;
 
             var o = new DoSomething();
 

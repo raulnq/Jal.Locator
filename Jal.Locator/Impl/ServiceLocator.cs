@@ -14,7 +14,7 @@ namespace Jal.Locator.Impl
     {
         public static IServiceLocator Current;
 
-        public static IServiceLocatorFluentBuilder Build
+        public static IServiceLocatorFluentBuilder Builder
         {
             get
             {
