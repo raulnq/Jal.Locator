@@ -9,7 +9,7 @@ I only suggest to use this implementation on simple apps.
 
 Create an instance of the locator
 
-    var locator = ServiceLocator.Build.Create as ServiceLocator;
+    var locator = ServiceLocator.Builder.Create as ServiceLocator;
 
 Register your service
 
