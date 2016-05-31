@@ -1,6 +1,6 @@
 ﻿namespace Jal.Locator.Interface.Fluent
 {
-    public interface IServiceLocatorFluentBuilder
+    public interface IServiceLocatorEndFluentBuilder
     {
         IServiceLocator Create { get; }
     }
