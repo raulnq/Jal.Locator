@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{88C8D7
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.LightInject", "Jal.Locator.LightInject\Jal.Locator.LightInject.csproj", "{A241564A-013D-4E4D-9530-45E0EE778A8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
