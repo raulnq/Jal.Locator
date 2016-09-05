@@ -5,11 +5,11 @@ using LightInject;
 
 namespace Jal.Locator.LightInject.Impl
 {
-    public class ServiceLocator : IServiceLocator
+    public class ServiceLocator : IScopedServiceLocator
     {
-        private readonly IServiceContainer _container;
+        private readonly IServiceFactory _container;
 
-        public ServiceLocator(IServiceContainer container)
+        public ServiceLocator(IServiceFactory container)
         {
             _container = container;
         }
@@ -46,6 +46,16 @@ namespace Jal.Locator.LightInject.Impl
         public object Resolve(Type service)
         {
             return _container.GetInstance(service);
+        }
+
+        public IDisposable BeginScope()
+        {
+            return _container.BeginScope();
+        }
+
+        public void Release(object instance)
+        {
+            
         }
     }
 }
