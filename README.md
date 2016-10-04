@@ -69,3 +69,5 @@ Resolve your service
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9iysp7cav79otj2n?svg=true)](https://ci.appveyor.com/project/raulnq/jal-locator)
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.svg)](https://www.nuget.org/packages/Jal.Locator) 
+[![NuGet](https://img.shields.io/nuget/v/Jal.Locator.CastleWindsor.svg)](https://www.nuget.org/packages/Jal.Locator.CastleWindsor)
+[![NuGet](https://img.shields.io/nuget/v/Jal.Locator.LightInject.svg)](https://www.nuget.org/packages/Jal.Locator.LightInject)
