@@ -26,16 +26,9 @@ namespace Jal.Locator.LightInject.Impl
 
         public TSource[] ResolveAll<TSource>() where TSource : class
         {
-            var allInstances = _container.GetAllInstances<TSource>();
+            var instances = _container.GetAllInstances<TSource>();
 
-            if (allInstances != null)
-            {
-                return allInstances.ToArray();
-            }
-            else
-            {
-                return null;
-            }               
+            return instances?.ToArray();
         }
 
         public object Resolve(Type service, string key)

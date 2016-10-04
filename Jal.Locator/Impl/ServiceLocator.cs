@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Jal.Locator.Fluent;
 using Jal.Locator.Interface;
-using Jal.Locator.Interface.Fluent;
 using Jal.Locator.Model;
 
 namespace Jal.Locator.Impl
@@ -13,14 +11,6 @@ namespace Jal.Locator.Impl
     public class ServiceLocator : IServiceLocator
     {
         public static IServiceLocator Current;
-
-        public static IServiceLocatorStartFluentBuilder Builder
-        {
-            get
-            {
-                return new ServiceLocatorFluentBuilder();
-            }
-        }
 
         [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
         private readonly IList<ServiceLocatorRecord> _records;
@@ -46,7 +36,7 @@ namespace Jal.Locator.Impl
             {
                 return o.Implementation as TSource;
             }
-            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", typeof(TSource).Name));
+            throw new ArgumentException($"It is not posible to get a instance of {typeof (TSource).Name}");
         }
 
         public TSource Resolve<TSource>(string name) where TSource : class
@@ -55,7 +45,7 @@ namespace Jal.Locator.Impl
             {
                 return o.Implementation as TSource;
             }
-            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", typeof(TSource).Name));
+            throw new ArgumentException($"It is not posible to get a instance of {typeof (TSource).Name}");
         }
 
         public TSource[] ResolveAll<TSource>() where TSource : class
@@ -69,7 +59,7 @@ namespace Jal.Locator.Impl
             {
                 return o.Implementation;
             }
-            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", service.Name));
+            throw new ArgumentException($"It is not posible to get a instance of {service.Name}");
         }
 
         public object Resolve(Type service, string name)
@@ -78,7 +68,7 @@ namespace Jal.Locator.Impl
             {
                 return o.Implementation;
             }
-            throw new ArgumentException(string.Format("It is not posible to get a instance of {0}", service.Name));
+            throw new ArgumentException($"It is not posible to get a instance of {service.Name}");
         }
     }
 }

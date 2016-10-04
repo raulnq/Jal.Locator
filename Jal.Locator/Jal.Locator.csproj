@@ -39,10 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\Fluent\IServiceLocatorStartFluentBuilder.cs" />
     <Compile Include="Impl\ServiceLocator.cs" />
-    <Compile Include="Fluent\ServiceLocatorFluentBuilder.cs" />
-    <Compile Include="Interface\Fluent\IServiceLocatorEndFluentBuilder.cs" />
     <Compile Include="Interface\IScopedServiceLocator.cs" />
     <Compile Include="Interface\IServiceLocator.cs" />
     <Compile Include="Model\ServiceLocatorRecord.cs" />

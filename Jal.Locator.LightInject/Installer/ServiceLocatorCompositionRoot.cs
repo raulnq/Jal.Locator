@@ -8,7 +8,8 @@ namespace Jal.Locator.LightInject.Installer
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            serviceRegistry.Register<IServiceLocator>(f => new ServiceLocator(f) ,new PerContainerLifetime());
+            serviceRegistry.Register<IScopedServiceLocator>(f => new ServiceLocator(f) ,new PerContainerLifetime());
+            serviceRegistry.Register<IServiceLocator>(f => f.GetInstance<IScopedServiceLocator>());
         }
     }
 }
