@@ -9,7 +9,7 @@ I only suggest to use this implementation on simple apps.
 
 Create an instance of the locator
 
-    var locator = ServiceLocator.Builder.Create as ServiceLocator;
+    var locator = new ServiceLocator();
 
 Register your service
 
@@ -33,11 +33,35 @@ Install the library
 	
 Register your service
 
-	container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().LifestyleSingleton());
+	container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>());
 				
 Resolve an instance of the IServiceLocator class
 
     var locator = container.Resolve<IServiceLocator>();
+	
+Resolve your service
+
+    var service = locator.Resolve<IDoSomething>();
+
+### LightInject implementation
+
+The following example is using the LightInject implementation
+
+Setup the container
+
+    var container = new ServiceContainer();
+	
+Install the library
+
+    container.RegisterFrom<ServiceLocatorCompositionRoot>();
+	
+Register your service
+
+	container.Register<IDoSomething, DoSomething>();
+				
+Resolve an instance of the IServiceLocator class
+
+    var locator = container.GetInstance<IServiceLocator>();
 	
 Resolve your service
 
