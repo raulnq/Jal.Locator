@@ -1,18 +1,18 @@
 ﻿using Jal.Locator.Impl;
 using Jal.Locator.Tests.Impl;
 using Jal.Locator.Tests.Interface;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Jal.Locator.Tests.Default
 {
-    [TestFixture]
+    [TestClass]
     public class Tests
     {
         private ServiceLocator _sut;
 
         private ServiceLocatorTest _test;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _sut = new ServiceLocator();
@@ -20,7 +20,7 @@ namespace Jal.Locator.Tests.Default
             _test = new ServiceLocatorTest();
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _sut.Register(typeof(IDoSomething), new DoSomething());
@@ -28,13 +28,13 @@ namespace Jal.Locator.Tests.Default
             _test.ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByType_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.ResolveByType_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _sut.Register(typeof(IDoSomething), new DoSomething());
@@ -42,13 +42,13 @@ namespace Jal.Locator.Tests.Default
             _test.Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void Resolve_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.Resolve_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _sut.Register(typeof(IDoSomething), new DoSomething(), "key");
@@ -56,13 +56,13 @@ namespace Jal.Locator.Tests.Default
             _test.ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut, "key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByKey_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.ResolveByKey_WithoutRegisteredObject_ShouldThrowException(_sut, "key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _sut.Register(typeof(IDoSomething), new DoSomething());
@@ -70,7 +70,7 @@ namespace Jal.Locator.Tests.Default
             _test.ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
 
@@ -79,7 +79,7 @@ namespace Jal.Locator.Tests.Default
             _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut, "key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException()
         {
             _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException(_sut, "key");

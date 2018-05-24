@@ -3,12 +3,11 @@ using Jal.Locator.LightInject.Installer;
 using Jal.Locator.Tests.Impl;
 using Jal.Locator.Tests.Interface;
 using LightInject;
-using NUnit.Framework;
-using Shouldly;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Jal.Locator.Tests.LightInject
 {
-    [TestFixture]
+    [TestClass]
     public class Tests
     {
         private ServiceContainer _container;
@@ -17,7 +16,7 @@ namespace Jal.Locator.Tests.LightInject
 
         private ServiceLocatorTest _test;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _container = new ServiceContainer();
@@ -29,7 +28,7 @@ namespace Jal.Locator.Tests.LightInject
             _test = new ServiceLocatorTest();
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _container.Register<IDoSomething, DoSomething>();
@@ -37,13 +36,13 @@ namespace Jal.Locator.Tests.LightInject
             _test.ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByType_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.ResolveByType_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
 
@@ -52,13 +51,13 @@ namespace Jal.Locator.Tests.LightInject
             _test.Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void Resolve_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.Resolve_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _container.Register<IDoSomething, DoSomething>("key");
@@ -66,13 +65,13 @@ namespace Jal.Locator.Tests.LightInject
             _test.ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut,"key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByKey_WithoutRegisteredObject_ShouldThrowException()
         {
             _test.ResolveByKey_WithoutRegisteredObject_ShouldThrowException(_sut, "key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _container.Register<IDoSomething, DoSomething>();
@@ -80,7 +79,7 @@ namespace Jal.Locator.Tests.LightInject
             _test.ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
 
-        [Test]
+        [TestMethod]
         public void BeginScopeRelease_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
             _container.Register<IDoSomething, DoSomething>(new PerContainerLifetime());
@@ -90,7 +89,7 @@ namespace Jal.Locator.Tests.LightInject
             _test.BeginScopeRelease_WithRegisterdObject_ShouldBeAssignableToIDoSomething(sut);
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByTypeAndKey_WithRegisteredObject_ShouldBeAssignableToIDoSomething()
         {
             _container.Register<IDoSomething, DoSomething>("key");
@@ -98,7 +97,7 @@ namespace Jal.Locator.Tests.LightInject
             _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut, "key");
         }
 
-        [Test]
+        [TestMethod]
         public void ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException()
         {
             _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException(_sut, "key");

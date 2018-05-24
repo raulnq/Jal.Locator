@@ -44,6 +44,9 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="LightInject, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.1.3\lib\net46\LightInject.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -60,10 +63,12 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CastleWindsor\ServiceLocatorTests.cs" />
+    <Compile Include="CastleWindsor\Tests.cs" />
+    <Compile Include="Default\Tests.cs" />
     <Compile Include="Impl\DoSomething.cs" />
+    <Compile Include="Impl\ServiceLocatorTest.cs" />
     <Compile Include="Interface\IDoSomething.cs" />
-    <Compile Include="ServiceLocatorTests.cs" />
+    <Compile Include="LightInject\Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +78,10 @@
     <ProjectReference Include="..\Jal.Locator.CastleWindsor\Jal.Locator.CastleWindsor.csproj">
       <Project>{01b58d88-6e58-43f2-bd60-74faf332871e}</Project>
       <Name>Jal.Locator.CastleWindsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jal.Locator.LightInject\Jal.Locator.LightInject.csproj">
+      <Project>{a241564a-013d-4e4d-9530-45e0ee778a8f}</Project>
+      <Name>Jal.Locator.LightInject</Name>
     </ProjectReference>
     <ProjectReference Include="..\Jal.Locator\Jal.Locator.csproj">
       <Project>{701994c3-6d08-4f98-9152-3c498ca2483f}</Project>
