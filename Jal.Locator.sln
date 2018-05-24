@@ -1,25 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator", "Jal.Locator\Jal.Locator.csproj", "{701994C3-6D08-4F98-9152-3C498CA2483F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator", "Jal.Locator\Jal.Locator.csproj", "{701994C3-6D08-4F98-9152-3C498CA2483F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.CastleWindsor", "Jal.Locator.CastleWindsor\Jal.Locator.CastleWindsor.csproj", "{01B58D88-6E58-43F2-BD60-74FAF332871E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.CastleWindsor", "Jal.Locator.CastleWindsor\Jal.Locator.CastleWindsor.csproj", "{01B58D88-6E58-43F2-BD60-74FAF332871E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.Tests", "Jal.Locator.Tests\Jal.Locator.Tests.csproj", "{EBB99D57-2563-4FDB-904F-D46FA243889C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.LightInject", "Jal.Locator.LightInject\Jal.Locator.LightInject.csproj", "{A241564A-013D-4E4D-9530-45E0EE778A8F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{88C8D759-A09D-4CBA-8A8C-0F158F2904DA}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.LightInject", "Jal.Locator.LightInject\Jal.Locator.LightInject.csproj", "{A241564A-013D-4E4D-9530-45E0EE778A8F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D20AB176-33EB-46C1-A07E-E4DDE485978A}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.Tests", "Jal.Locator.Tests\Jal.Locator.Tests.csproj", "{05940F99-55E3-45CD-9BFA-FA3FF3114675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,16 +25,19 @@ Global
 		{01B58D88-6E58-43F2-BD60-74FAF332871E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01B58D88-6E58-43F2-BD60-74FAF332871E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01B58D88-6E58-43F2-BD60-74FAF332871E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBB99D57-2563-4FDB-904F-D46FA243889C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A241564A-013D-4E4D-9530-45E0EE778A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05940F99-55E3-45CD-9BFA-FA3FF3114675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05940F99-55E3-45CD-9BFA-FA3FF3114675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05940F99-55E3-45CD-9BFA-FA3FF3114675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05940F99-55E3-45CD-9BFA-FA3FF3114675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E35D4D1-4A0E-4D9B-B3C4-EC945FD42947}
 	EndGlobalSection
 EndGlobal
