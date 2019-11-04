@@ -94,7 +94,7 @@ namespace Jal.Locator.Tests.CastleWindsor
         {
             _container.Register(Component.For<IDoSomething>().ImplementedBy<DoSomething>().Named(typeof(DoSomething).Name).LifestyleSingleton());
 
-            _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut, "key");
+            _test.ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut, typeof(DoSomething).Name);
         }
 
         [TestMethod]

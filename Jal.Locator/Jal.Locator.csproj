@@ -1,16 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.6</TargetFrameworks>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <Authors>Raul Naupari</Authors>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <Company>Raul Naupari</Company>
     <Description>Just another library to implement a service locator pattern</Description>
     <Copyright />
-    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/raulnq/Jal.Locator</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
     <PackageTags />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
   
 </Project>
