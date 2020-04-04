@@ -90,3 +90,4 @@ var service = locator.Resolve<IDoSomething>();
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.svg)](https://www.nuget.org/packages/Jal.Locator) 
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.CastleWindsor.svg)](https://www.nuget.org/packages/Jal.Locator.CastleWindsor)
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.LightInject.svg)](https://www.nuget.org/packages/Jal.Locator.LightInject)
+[![NuGet](https://img.shields.io/nuget/v/Jal.Locator.Microsoft.Extensions.DependencyInjection.svg)](https://www.nuget.org/packages/Jal.Locator.Microsoft.Extensions.DependencyInjection)
