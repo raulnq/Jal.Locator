@@ -1,9 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using Jal.Locator.CastleWindsor.Installer;
-using Jal.Locator.Interface;
+using Jal.Locator.CastleWindsor;
 using Jal.Locator.Tests.Impl;
-using Jal.Locator.Tests.Interface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Jal.Locator.Tests.CastleWindsor

@@ -1,8 +1,6 @@
-﻿using Jal.Locator.Interface;
-using Jal.Locator.LightInject.Impl;
-using LightInject;
+﻿using LightInject;
 
-namespace Jal.Locator.LightInject.Installer
+namespace Jal.Locator.LightInject
 {
     public class ServiceLocatorCompositionRoot : ICompositionRoot
     {

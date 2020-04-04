@@ -1,6 +1,4 @@
-﻿using Jal.Locator.Tests.Interface;
-
-namespace Jal.Locator.Tests.Impl
+﻿namespace Jal.Locator.Tests
 {
     public class OtherDoSomething : IDoSomething
     {

@@ -1,4 +1,4 @@
-﻿namespace Jal.Locator.Tests.Interface
+﻿namespace Jal.Locator.Tests
 {
     public interface IDoSomething
     {

@@ -1,10 +1,8 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using Jal.Locator.CastleWindsor.Impl;
-using Jal.Locator.Interface;
 
-namespace Jal.Locator.CastleWindsor.Installer
+namespace Jal.Locator.CastleWindsor
 {
     public class ServiceLocatorInstaller : IWindsorInstaller
     {

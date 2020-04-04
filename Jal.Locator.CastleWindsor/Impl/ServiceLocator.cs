@@ -1,9 +1,8 @@
 ﻿using System;
 using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
-using Jal.Locator.Interface;
 
-namespace Jal.Locator.CastleWindsor.Impl
+namespace Jal.Locator.CastleWindsor
 {
     public class ServiceLocator : IScopedServiceLocator
     {
@@ -17,11 +16,6 @@ namespace Jal.Locator.CastleWindsor.Impl
         public IDisposable BeginScope()
         {
             return Container.BeginScope();
-        }
-
-        public void Release(object instance)
-        {
-            Container.Release(instance);
         }
 
         public TSource Resolve<TSource>(string key) where TSource : class 

@@ -1,11 +1,9 @@
 ﻿using System;
 
-namespace Jal.Locator.Interface
+namespace Jal.Locator
 {
     public interface IScopedServiceLocator : IServiceLocator
     {
         IDisposable BeginScope();
-
-        void Release(object instance);
     }
 }

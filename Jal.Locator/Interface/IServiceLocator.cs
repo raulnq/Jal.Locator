@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jal.Locator.Interface
+namespace Jal.Locator
 {
     public interface IServiceLocator
     {

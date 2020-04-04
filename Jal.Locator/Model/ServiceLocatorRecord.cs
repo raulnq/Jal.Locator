@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jal.Locator.Model
+namespace Jal.Locator
 {
     public class ServiceLocatorRecord
     {

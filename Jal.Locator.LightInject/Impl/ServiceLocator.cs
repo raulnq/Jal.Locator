@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Jal.Locator.Interface;
 using LightInject;
 
-namespace Jal.Locator.LightInject.Impl
+namespace Jal.Locator.LightInject
 {
     public class ServiceLocator : IScopedServiceLocator
     {
@@ -28,7 +27,12 @@ namespace Jal.Locator.LightInject.Impl
         {
             var instances = _container.GetAllInstances<TSource>();
 
-            return instances?.ToArray();
+            if(instances==null)
+            {
+                return Array.Empty<TSource>();
+            }
+
+            return instances.ToArray();
         }
 
         public object Resolve(Type service, string key)
@@ -44,11 +48,6 @@ namespace Jal.Locator.LightInject.Impl
         public IDisposable BeginScope()
         {
             return _container.BeginScope();
-        }
-
-        public void Release(object instance)
-        {
-            
         }
     }
 }

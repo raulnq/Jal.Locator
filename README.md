@@ -3,9 +3,7 @@ Just another library to implement a service locator pattern
 
 ## How to use?
 
-### Default implementation
-
-I only suggest to use this implementation on simple apps.
+### Default implementation (Not recommended)
 
 Create an instance of the locator
 ```c++
@@ -20,8 +18,6 @@ Resolve your service
 var service = locator.Resolve<IDoSomething>();
 ```
 ### Castle Windsor implementation
-
-The following example is using the Castle Windsor implementation
 
 Setup the container
 ```c++
@@ -45,8 +41,6 @@ var service = locator.Resolve<IDoSomething>();
 ```
 ### LightInject implementation
 
-The following example is using the LightInject implementation
-
 Setup the container
 ```c++
 var container = new ServiceContainer();
@@ -67,6 +61,31 @@ Resolve your service
 ```c++
 var service = locator.Resolve<IDoSomething>();
 ```
+### Microsoft.Extensions.DependencyInjection implementation
+
+Setup the container
+```c++
+var container = new ServiceCollection();
+```
+Install the library
+```c++
+container.AddServiceLocator();
+```
+Register your service
+```c++
+container.AddSingleton<IDoSomething, DoSomething>();
+```			
+Resolve an instance of the IServiceLocator class
+```c++
+var provider = container.BuildServiceProvider()
+
+var locator = provider.GetService<IServiceLocator>();
+```
+Resolve your service
+```c++
+var service = locator.Resolve<IDoSomething>();
+```
+
 [![Build status](https://ci.appveyor.com/api/projects/status/9iysp7cav79otj2n?svg=true)](https://ci.appveyor.com/project/raulnq/jal-locator)
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.svg)](https://www.nuget.org/packages/Jal.Locator) 
 [![NuGet](https://img.shields.io/nuget/v/Jal.Locator.CastleWindsor.svg)](https://www.nuget.org/packages/Jal.Locator.CastleWindsor)

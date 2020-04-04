@@ -1,7 +1,6 @@
-﻿using Jal.Locator.Impl;
-using Jal.Locator.Tests.Impl;
-using Jal.Locator.Tests.Interface;
+﻿using Jal.Locator.Tests.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 
 namespace Jal.Locator.Tests.Default
 {

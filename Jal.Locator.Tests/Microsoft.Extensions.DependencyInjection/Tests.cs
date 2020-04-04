@@ -1,11 +1,5 @@
-﻿using Jal.Locator.Interface;
-using Jal.Locator.LightInject.Installer;
-using Jal.Locator.Microsoft.Extensions.DependencyInjection.Extensions;
-using Jal.Locator.Microsoft.Extensions.DependencyInjection.Impl;
-using Jal.Locator.Microsoft.Extensions.DependencyInjection.Interface;
+﻿using Jal.Locator.Microsoft.Extensions.DependencyInjection;
 using Jal.Locator.Tests.Impl;
-using Jal.Locator.Tests.Interface;
-using LightInject;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,8 +10,6 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
     {
         private IServiceCollection _container;
 
-        private INamedServiceCollection _namedcontainer;
-
         private ServiceLocatorTest _test;
 
         [TestInitialize]
@@ -25,7 +17,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
         {
             _container = new ServiceCollection();
 
-            _namedcontainer =_container.AddServiceLocator();
+            _container.AddServiceLocator();
 
             _test = new ServiceLocatorTest();
         }
@@ -77,13 +69,13 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
         [TestMethod]
         public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething()
         {
-            _namedcontainer.AddSingleton<IDoSomething, DoSomething>("key");
+            _container.AddSingleton<IDoSomething, DoSomething>();
 
             var provider = _container.BuildServiceProvider();
 
             var _sut = provider.GetService<IServiceLocator>();
 
-            _test.ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut,"key");
+            _test.ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut,typeof(DoSomething).FullName);
         }
 
         [TestMethod]

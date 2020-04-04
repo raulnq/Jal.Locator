@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Raul Naupari</Authors>
-    <Version>1.1.2</Version>
+    <Version>2.0.0</Version>
     <Company>Raul Naupari</Company>
     <Description>LightInject implementation of the Jal.Locator library</Description>
     <Copyright />
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LightInject" Version="6.2.0" />
+    <PackageReference Include="LightInject" Version="6.3.2" />
   </ItemGroup>
 
   <ItemGroup>

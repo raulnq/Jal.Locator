@@ -9,9 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.CastleWindsor",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.LightInject", "Jal.Locator.LightInject\Jal.Locator.LightInject.csproj", "{A241564A-013D-4E4D-9530-45E0EE778A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.Microsoft.Extensions.DependencyInjection", "Jal.Locator.Microsoft.Extensions.DependencyInjection\Jal.Locator.Microsoft.Extensions.DependencyInjection.csproj", "{94824F22-5413-4492-A3C3-0E3ADDB82005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.Microsoft.Extensions.DependencyInjection", "Jal.Locator.Microsoft.Extensions.DependencyInjection\Jal.Locator.Microsoft.Extensions.DependencyInjection.csproj", "{94824F22-5413-4492-A3C3-0E3ADDB82005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jal.Locator.Tests", "Jal.Locator.Tests\Jal.Locator.Tests.csproj", "{0F5C8990-328D-45BF-AEC6-92AEEC9BEFA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jal.Locator.Tests", "Jal.Locator.Tests\Jal.Locator.Tests.csproj", "{0F5C8990-328D-45BF-AEC6-92AEEC9BEFA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{446EDE41-13D7-4B97-8A06-60BF9E2D658F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Jal.Locator.Interface;
-using Jal.Locator.Model;
 
-namespace Jal.Locator.Impl
+namespace Jal.Locator
 {
     [DebuggerDisplay("Items: {_records.Count}")]
     public class ServiceLocator : IServiceLocator

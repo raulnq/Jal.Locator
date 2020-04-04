@@ -1,12 +1,11 @@
 using System;
-using Jal.Locator.Tests.Interface;
 using Shouldly;
 
 namespace Jal.Locator.Tests.Impl
 {
     public class ServiceLocatorTest
     {
-        public void ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IServiceLocator sut)
+        public void ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IServiceLocator sut)
         {
             var instance = sut.Resolve(typeof(IDoSomething));
 
@@ -15,12 +14,12 @@ namespace Jal.Locator.Tests.Impl
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }
 
-        public void ResolveByType_WithoutRegisteredObject_ShouldThrowException(Locator.Interface.IServiceLocator sut)
+        public void ResolveByType_WithoutRegisteredObject_ShouldThrowException(Locator.IServiceLocator sut)
         {
             Should.Throw<Exception>(() => sut.Resolve(typeof(IDoSomething)));
         }
 
-        public void Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IServiceLocator sut)
+        public void Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IServiceLocator sut)
         {
             var instance = sut.Resolve<IDoSomething>();
 
@@ -29,12 +28,12 @@ namespace Jal.Locator.Tests.Impl
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }
 
-        public void Resolve_WithoutRegisteredObject_ShouldThrowException(Locator.Interface.IServiceLocator sut)
+        public void Resolve_WithoutRegisteredObject_ShouldThrowException(Locator.IServiceLocator sut)
         {
             Should.Throw<Exception>(() => sut.Resolve<IDoSomething>());
         }
 
-        public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IServiceLocator sut, string key)
+        public void ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IServiceLocator sut, string key)
         {
             var instance = sut.Resolve<IDoSomething>(key);
 
@@ -43,12 +42,12 @@ namespace Jal.Locator.Tests.Impl
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }
 
-        public void ResolveByKey_WithoutRegisteredObject_ShouldThrowException(Locator.Interface.IServiceLocator sut, string key)
+        public void ResolveByKey_WithoutRegisteredObject_ShouldThrowException(Locator.IServiceLocator sut, string key)
         {
             Should.Throw<Exception>(() => sut.Resolve<IDoSomething>(key));
         }
 
-        public void ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IServiceLocator sut)
+        public void ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IServiceLocator sut)
         {
             var instance = sut.ResolveAll<IDoSomething>();
 
@@ -57,19 +56,19 @@ namespace Jal.Locator.Tests.Impl
             instance.ShouldBeAssignableTo(typeof(IDoSomething[]));
         }
 
-        public void ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IServiceLocator sut, string key)
+        public void ResolveByTypeAndKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IServiceLocator sut, string key)
         {
             var instance = sut.Resolve(typeof(IDoSomething), key);
 
             instance.ShouldBeAssignableTo(typeof(IDoSomething));
         }
 
-        public void ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException(Locator.Interface.IServiceLocator sut, string key)
+        public void ResolveByTypeAndKey_WithRegisterdObject_ShouldThrowException(Locator.IServiceLocator sut, string key)
         {
             Should.Throw<Exception>(() => sut.Resolve(typeof(IDoSomething), key));
         }
 
-        public void BeginScopeRelease_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.Interface.IScopedServiceLocator sut)
+        public void BeginScopeRelease_WithRegisterdObject_ShouldBeAssignableToIDoSomething(Locator.IScopedServiceLocator sut)
         {
             using (sut.BeginScope())
             {
@@ -82,10 +81,7 @@ namespace Jal.Locator.Tests.Impl
                 instance2.ShouldBeAssignableTo(typeof(IDoSomething));
 
                 instance1.ShouldBeSameAs(instance2);
-
-                sut.Release(instance1);
             }
         }
-
     }
 }

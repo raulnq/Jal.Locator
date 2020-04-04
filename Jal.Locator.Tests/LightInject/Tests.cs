@@ -1,7 +1,5 @@
-﻿using Jal.Locator.Interface;
-using Jal.Locator.LightInject.Installer;
+﻿using Jal.Locator.LightInject;
 using Jal.Locator.Tests.Impl;
-using Jal.Locator.Tests.Interface;
 using LightInject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
