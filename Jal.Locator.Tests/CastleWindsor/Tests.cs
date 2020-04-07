@@ -20,7 +20,7 @@ namespace Jal.Locator.Tests.CastleWindsor
         {
             _container = new WindsorContainer();
 
-            _container.Install(new ServiceLocatorInstaller());
+            _container.AddServiceLocator();
 
             _sut = _container.Resolve<IServiceLocator>();
 

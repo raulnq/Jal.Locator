@@ -4,6 +4,7 @@ using Castle.Windsor;
 
 namespace Jal.Locator.CastleWindsor
 {
+
     public class ServiceLocatorInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
