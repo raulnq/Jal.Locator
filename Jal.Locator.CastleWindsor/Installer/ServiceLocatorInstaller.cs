@@ -9,9 +9,10 @@ namespace Jal.Locator.CastleWindsor
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(
-                Component.For<IServiceLocator, IScopedServiceLocator>().ImplementedBy<ServiceLocator>().DependsOn(new {Container = container}).LifestyleSingleton()
-                );
+            if(!container.Kernel.HasComponent(typeof(IServiceLocator)))
+            {
+                container.Register(Component.For<IServiceLocator, IScopedServiceLocator>().ImplementedBy<ServiceLocator>().DependsOn(new { Container = container }).LifestyleSingleton());
+            }
         }
     }
 }
