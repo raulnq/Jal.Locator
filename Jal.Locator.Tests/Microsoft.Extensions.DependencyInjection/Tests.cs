@@ -29,7 +29,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
 
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.ResolveByType_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
@@ -39,7 +39,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
         {
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.ResolveByType_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
@@ -51,7 +51,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
 
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.Resolve_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }
@@ -61,7 +61,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
         {
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.Resolve_WithoutRegisteredObject_ShouldThrowException(_sut);
         }
@@ -73,7 +73,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
 
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.ResolveByKey_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut,typeof(DoSomething).FullName);
         }
@@ -83,7 +83,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
         {
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.ResolveByKey_WithoutRegisteredObject_ShouldThrowException(_sut, "key");
         }
@@ -97,7 +97,7 @@ namespace Jal.Locator.Tests.Microsoft.Extensions.DependencyInjection
 
             var provider = _container.BuildServiceProvider();
 
-            var _sut = provider.GetService<IServiceLocator>();
+            var _sut = provider.GetServiceLocator();
 
             _test.ResolveAll_WithRegisterdObject_ShouldBeAssignableToIDoSomething(_sut);
         }

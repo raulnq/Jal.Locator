@@ -22,7 +22,7 @@ namespace Jal.Locator.Tests.CastleWindsor
 
             _container.AddServiceLocator();
 
-            _sut = _container.Resolve<IServiceLocator>();
+            _sut = _container.GetServiceLocator();
 
             _test = new ServiceLocatorTest();
         }

@@ -8,5 +8,12 @@ namespace Jal.Locator.LightInject
         {
             container.RegisterFrom<ServiceLocatorCompositionRoot>();
         }
+
+        public static IServiceLocator GetServiceLocator(this IServiceContainer container)
+        {
+            return container.GetInstance<IServiceLocator>();
+        }
+
+       
     }
 }

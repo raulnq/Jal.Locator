@@ -8,5 +8,10 @@ namespace Jal.Locator.CastleWindsor
         {
             container.Install(new ServiceLocatorInstaller());
         }
+
+        public static IServiceLocator GetServiceLocator(this IWindsorContainer container)
+        {
+            return container.Resolve<IServiceLocator>();
+        }
     }
 }

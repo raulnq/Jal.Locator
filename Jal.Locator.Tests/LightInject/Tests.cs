@@ -21,7 +21,7 @@ namespace Jal.Locator.Tests.LightInject
 
             _container.AddServiceLocator();
 
-            _sut = _container.GetInstance<IServiceLocator>();
+            _sut = _container.GetServiceLocator();
 
             _test = new ServiceLocatorTest();
         }
